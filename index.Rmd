@@ -1,0 +1,33 @@
+--- 
+title: "Epidemiology Basics"
+author: "Max Salvatore"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: maxsal/epid_basics
+description: "Built using `bookdown` in `R`."
+---
+
+```{r echo = FALSE}
+library(emo)
+```
+
+# Introduction
+
+`r emo::ji("waving_hand")` Hello and welcome! This book will contain notes on a variety of epidemiologic topics including study design and biases.
+
+`r emo::ji("warning")` At present, this is a **not a functional book** and the content is **a work in progress** `r emo::ji("wrench")`.
+
+**The current version of the book has not been reviewed for correctness and references.**
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```

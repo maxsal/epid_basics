@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 2 Confounding bias | Epidemiology Basics</title>
+<meta name="author" content="Max Salvatore">
+<meta name="description" content="2.1 Identifying confounding  2.1.1 Data-driven approaches There are many data-driven approaches that are used to identify confounding that are based on statistical approaches to examine...">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta property="og:title" content="Chapter 2 Confounding bias | Epidemiology Basics">
+<meta property="og:type" content="book">
+<meta property="og:description" content="2.1 Identifying confounding  2.1.1 Data-driven approaches There are many data-driven approaches that are used to identify confounding that are based on statistical approaches to examine...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 2 Confounding bias | Epidemiology Basics">
+<meta name="twitter:description" content="2.1 Identifying confounding  2.1.1 Data-driven approaches There are many data-driven approaches that are used to identify confounding that are based on statistical approaches to examine...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Epidemiology Basics</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="active" href="confounding.html"><span class="header-section-number">2</span> Confounding bias</a></li>
+<li><a class="" href="selection-bias.html"><span class="header-section-number">3</span> Selection bias</a></li>
+<li><a class="" href="literature.html"><span class="header-section-number">4</span> Literature</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="confounding" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> Confounding bias<a class="anchor" aria-label="anchor" href="#confounding"><i class="fas fa-link"></i></a>
+</h1>
+<div id="identifying-confounding" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Identifying confounding<a class="anchor" aria-label="anchor" href="#identifying-confounding"><i class="fas fa-link"></i></a>
+</h2>
+<div id="data-driven-approaches" class="section level3" number="2.1.1">
+<h3>
+<span class="header-section-number">2.1.1</span> Data-driven approaches<a class="anchor" aria-label="anchor" href="#data-driven-approaches"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>There are many data-driven approaches that are used to identify confounding that are based on statistical approaches to examine associations in study data
+<ul>
+<li>Stepwise regression
+<ul>
+<li>Throw all suspected confounders into a model and remove those not associated with the outcome (e.g., p &gt; 0.05) in a stepwise fashion</li>
+</ul>
+</li>
+<li>Change-in-estimate approach (10% rule)
+<ul>
+<li>Throw all suspected confounders into a model, retain those whose removal changes the exposure -&gt; outcome effect estimate by &gt; 10%</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong><em>But</em></strong> confounding is about <strong>causal</strong> relationships, thus it is best to identifying confounding by using causal relationships</p>
+<ul>
+<li>The observed data structure and <em>a prior</em> theory or knowledge about the suspected data structure are used to identify confounding</li>
+<li>This is better than stepwise regression or the change-in-estimate approach, which use arbitrary rules based on statistical significance</li>
+</ul>
+</div>
+<div id="structural-approach" class="section level3" number="2.1.2">
+<h3>
+<span class="header-section-number">2.1.2</span> Structural approach<a class="anchor" aria-label="anchor" href="#structural-approach"><i class="fas fa-link"></i></a>
+</h3>
+<div id="three-criteria" class="section level4" number="2.1.2.1">
+<h4>
+<span class="header-section-number">2.1.2.1</span> Three criteria<a class="anchor" aria-label="anchor" href="#three-criteria"><i class="fas fa-link"></i></a>
+</h4>
+<p>A confounding factor must:</p>
+<ol style="list-style-type: decimal">
+<li>Be a cause of the outcome under study</li>
+<li>Be associated with the exposure under study in the source population</li>
+<li>Must not be caused by the exposure or disease</li>
+</ol>
+</div>
+<div id="criteria-1-confounding-factor-must-cause-the-outcome-either-directly-or-indirectly" class="section level4" number="2.1.2.2">
+<h4>
+<span class="header-section-number">2.1.2.2</span> Criteria 1: Confounding factor must cause the outcome (either directly or indirectly)<a class="anchor" aria-label="anchor" href="#criteria-1-confounding-factor-must-cause-the-outcome-either-directly-or-indirectly"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>A confounding factor must be a cause of the outcome
+<ul>
+<li>May be an actual cause of the disease</li>
+<li>May be a surrogate/proxy or indirect cause of the disease
+<ul>
+<li>Household income as a surrogate for a milieu of social factors correlated with income</li>
+<li>Education as a proxy for literacy</li>
+</ul>
+</li>
+<li>Prior theory or knowledge (not the data itself) is used to determine the relation of the suspected confounding factor to the outcome</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="criteria-2-confounding-factor-must-be-associated-with-the-exposure-in-the-source-population" class="section level4" number="2.1.2.3">
+<h4>
+<span class="header-section-number">2.1.2.3</span> Criteria 2: Confounding factor must be associated with the exposure in the source population<a class="anchor" aria-label="anchor" href="#criteria-2-confounding-factor-must-be-associated-with-the-exposure-in-the-source-population"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>We can generally identify this directly from our data, however varies a bit by design</li>
+<li>Cohort Study
+<ul>
+<li>Cohort is source population. Therefore, this relationship can be determined from the observed study data.</li>
+</ul>
+</li>
+<li>Case-control Study
+<ul>
+<li>In a C-C study, the controls are selected from the source population, however, the control group needs to be very large and have no selection bias or measurement error in order to accurately reflect the association in the source population.</li>
+<li>External information can be used when available, or prior knowledge.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="criteria-3-the-factor-cannot-be-caused-by-the-exposure-or-the-disease" class="section level4" number="2.1.2.4">
+<h4>
+<span class="header-section-number">2.1.2.4</span> Criteria 3: The factor cannot be caused by the exposure or the disease<a class="anchor" aria-label="anchor" href="#criteria-3-the-factor-cannot-be-caused-by-the-exposure-or-the-disease"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>A confounding factor must not be affected by the exposure or the disease.</li>
+<li>Two scenarios can occur here:
+<ol style="list-style-type: decimal">
+<li>The factor that we think is a confounder is actually an intermediate on the causal pathway between exposure and outcome (a <strong>mediator</strong>)</li>
+<li>The factor that we think is a confounder is a common outcome of the exposure and outcome of interest (a <strong>collider</strong>)</li>
+</ol>
+</li>
+</ul>
+</div>
+<div id="intermediate-on-the-causal-pathway-mediator" class="section level4" number="2.1.2.5">
+<h4>
+<span class="header-section-number">2.1.2.5</span> Intermediate on the causal pathway (Mediator)<a class="anchor" aria-label="anchor" href="#intermediate-on-the-causal-pathway-mediator"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>Here, low birth weight is on the causal pathway from maternal smoking and perinatal mortality</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="img/confounding/mediator_example.png" alt="Example of mediator" width="100%"><p class="caption">
+Figure 2.1: Example of mediator
+</p>
+</div>
+<ul>
+<li>Low birth weight is a <strong>mediator</strong>. Adjusting for a mediator is referred to as “over-adjustment”</li>
+</ul>
+<p>Another example: Fluoridation, Diet sugar, and Tooth decay</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="img/confounding/overadjusting_example.png" alt="Example of a collider" width="100%"><p class="caption">
+Figure 2.2: Example of a collider
+</p>
+</div>
+</div>
+<div id="confounding-is-structural" class="section level4" number="2.1.2.6">
+<h4>
+<span class="header-section-number">2.1.2.6</span> Confounding is structural<a class="anchor" aria-label="anchor" href="#confounding-is-structural"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>Confounding arises because of how, structurally, the variables are related to each other
+<ul>
+<li>Either how they are naturally related to each other, or, how they are related to each other after an investigator has changed the relationships by adjustmnet, matching, conditioning, etc.</li>
+</ul>
+</li>
+</ul>
+<p>How do we know what the proper structural relationships are?</p>
+<ul>
+<li>Directed Acyclic Graphs (DAGs)
+<ul>
+<li>NOT a method of data analysis</li>
+<li>They are used to IDENTIFY confounders based on the assumptions we are willing to make</li>
+</ul>
+</li>
+<li>DAGs help us to depict the assumed temporal structure of the relationships between our factors
+<ul>
+<li>Both in the state of nature</li>
+<li>And after investigators have intervened on the natural structure by conditioning on a set of factors</li>
+</ul>
+</li>
+</ul>
+<p>So</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<img src="img/confounding/confounding_example.png" alt="Example of confounding" width="100%"><p class="caption">
+Figure 2.3: Example of confounding
+</p>
+</div>
+<ul>
+<li>We want exchangeability of those with low vs. non-low income, condition on having a mother with diabetes (conditional exchangeability)</li>
+<li>The goal is to block all backdoor paths from the exposure to the outcome on the DAG</li>
+</ul>
+</div>
+<div id="dag-rules-for-identifying-confounding" class="section level4" number="2.1.2.7">
+<h4>
+<span class="header-section-number">2.1.2.7</span> DAG rules for identifying confounding<a class="anchor" aria-label="anchor" href="#dag-rules-for-identifying-confounding"><i class="fas fa-link"></i></a>
+</h4>
+<ol style="list-style-type: decimal">
+<li>To get from A to Y through a backdoor path, you can move along any path, regardless of the arrow’s directionality</li>
+</ol>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<img src="img/confounding/dag_rules_1.png" alt="An open backdoor path" width="100%"><p class="caption">
+Figure 2.4: An open backdoor path
+</p>
+</div>
+<p>In the above example (Fig. 2.4), a backdoor path is open through the orange arrows. The effect of the exposure on the outcome is <strong>not</strong> identified.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Conditioning on a <em>common cause of the exposure and outcome</em> (<strong>confounder</strong>) closes the backdoor path</li>
+</ol>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<img src="img/confounding/dag_rules_2.png" alt="Conditioning on confounder W1 closes backdoor path" width="100%"><p class="caption">
+Figure 2.5: Conditioning on confounder W1 closes backdoor path
+</p>
+</div>
+<p>In the above example (Fig. 2.5), a backdoor path starting from A is blocked at W1. The effect of A (the exposure) on Y (the outcome) <strong>is</strong> identified.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>
+<strong>Unmeasured</strong> factors (U) may still lead to confounding, even if you closed the backdoor path through measured factors</li>
+</ol>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<img src="img/confounding/dag_rules_3.png" alt="Unmeasured factors (U) may still lead to confounding" width="100%"><p class="caption">
+Figure 2.6: Unmeasured factors (U) may still lead to confounding
+</p>
+</div>
+<p>In the above example (Fig 2.6), a backdoor path is blocked at W1, but it is open through U. The effect of A on Y is <strong>not</strong> identified.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>The existence of a collider will block the backdoor path</li>
+</ol>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<img src="img/confounding/dag_rules_4.png" alt="Colliders (W1) block backdoor paths" width="100%"><p class="caption">
+Figure 2.7: Colliders (W1) block backdoor paths
+</p>
+</div>
+<p>In the above example (Fig 2.7), a backdoor path starting from A is blocked at W1. The effect of A on Y <strong>is</strong> identified.</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Condition on a collider will open the backdoor path</li>
+</ol>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<img src="img/confounding/dag_rules_5.png" alt="Colliders (W1) block backdoor paths" width="100%"><p class="caption">
+Figure 2.8: Colliders (W1) block backdoor paths
+</p>
+</div>
+<p>In the above example (Fig 2.8), a backdoor path starting from A is opened by condition on W1. The effect of A on Y is <strong>not</strong> identified.</p>
+<ol start="6" style="list-style-type: decimal">
+<li>Conditioning on a descendant (outcome) of a collider will open the backdoor path</li>
+</ol>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-11"></span>
+<img src="img/confounding/dag_rules_6.png" alt="Conditioning on descendant of collider opens backdoor path" width="100%"><p class="caption">
+Figure 2.9: Conditioning on descendant of collider opens backdoor path
+</p>
+</div>
+<p>In the above example (Fig 2.9), a backdoor path starting from A is opened by conditioning on W3. The effect of A on Y is <strong>not</strong> identified.</p>
+</div>
+<div id="quantifying-confounding" class="section level4" number="2.1.2.8">
+<h4>
+<span class="header-section-number">2.1.2.8</span> Quantifying confounding<a class="anchor" aria-label="anchor" href="#quantifying-confounding"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>Non-collapsibility of strata
+<ul>
+<li>When the association of exposure and outcome is different across the strata of a third variable identified as a confounder and the crude (non-stratified) association, then the data are not collapsible and confounding is present</li>
+<li>To be continued….</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="index.html"><span class="header-section-number">1</span> Introduction</a></div>
+<div class="next"><a href="selection-bias.html"><span class="header-section-number">3</span> Selection bias</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#confounding"><span class="header-section-number">2</span> Confounding bias</a></li>
+<li>
+<a class="nav-link" href="#identifying-confounding"><span class="header-section-number">2.1</span> Identifying confounding</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#data-driven-approaches"><span class="header-section-number">2.1.1</span> Data-driven approaches</a></li>
+<li><a class="nav-link" href="#structural-approach"><span class="header-section-number">2.1.2</span> Structural approach</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Epidemiology Basics</strong>" was written by Max Salvatore. It was last built on 2022-05-09.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

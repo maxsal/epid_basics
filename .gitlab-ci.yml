@@ -1,0 +1,29 @@
+image: rocker/verse:4.1.0 
+
+.bookdown:
+  stage: deploy
+  script:
+    - R -e "Sys.setenv(GITLAB_PAT = '$MY_GITLAB_PAT')"
+    - R -e "install.packages('remotes')"
+    - R -e "remotes::install_github('hadley/emo', auth_token = '$MY_GITHUB_PAT')"
+#    - R -e "remotes::install_deps(dependencies = TRUE)"
+    - Rscript -e "bookdown::render_book(input = 'index.Rmd', 'bookdown::gitbook', output_dir = 'public')" #"bookdown::render_book(input = 'index.Rmd', 'bookdown::gitbook', output_dir = 'public')"
+  artifacts:
+    paths:
+      - public
+
+pages:
+  extends: .bookdown
+
+mr-review:
+  extends: .bookdown
+  after_script:
+    - echo "ENVIRONMENT_URL=https://$CI_PROJECT_NAMESPACE.$CI_PAGES_DOMAIN/-/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/public/index.html" >> deploy.env
+  artifacts:
+    reports:
+      dotenv: deploy.env
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: $ENVIRONMENT_URL
+  only:
+    - merge_requests
