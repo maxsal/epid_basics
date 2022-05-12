@@ -6,7 +6,7 @@
 ]{book}
 \title{Epidemiology Basics}
 \author{Max Salvatore}
-\date{2022-05-09}
+\date{2022-05-12}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -101,6 +101,461 @@
 ⚠️ At present, this is a \textbf{not a functional book} and the content is \textbf{a work in progress} 🔧.
 
 \textbf{The current version of the book has not been reviewed for correctness and references.}
+
+\hypertarget{study-design}{%
+\chapter{Study design}\label{study-design}}
+
+\emph{Material adapted from \href{https://www.hopkinsmedicine.org/gynecology_obstetrics/pdfs/medstudent/rtc2014/Epi\%20Study\%20Design\%20and\%20Exploratory\%20Analyses_abb.pdf}{slides by Jack Jennings, PhD, MPH}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/study_design/study_design_schematic} 
+
+}
+
+\caption{Comparison of study designs}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+\hypertarget{cross-sectional-studies}{%
+\section{Cross-sectional studies}\label{cross-sectional-studies}}
+
+\begin{itemize}
+\tightlist
+\item
+  Measure existing disease and current exposure levels at one point in time
+\item
+  Sample without knowledge of exposure or disease
+\item
+  Ex. prevalence studies
+\end{itemize}
+
+\hypertarget{advantages}{%
+\subsection{Advantages}\label{advantages}}
+
+\begin{itemize}
+\tightlist
+\item
+  Often early study design in a line of investigation
+\item
+  Good for hypothesis generation
+\item
+  Relatively easy, quick and inexpensive \ldots{} \emph{depends on question}
+\item
+  Examin multiple exposures or outcomes
+\item
+  Estimate prevalence of disease and exposures
+\end{itemize}
+
+\hypertarget{disadvantages}{%
+\subsection{Disadvantages}\label{disadvantages}}
+
+\begin{itemize}
+\tightlist
+\item
+  Cannot infer causality
+\item
+  Prevalent vs.~incident disease
+\item
+  May miss latent disease
+\item
+  May be subject to recall bias
+\end{itemize}
+
+\hypertarget{example}{%
+\subsection{Example}\label{example}}
+
+Research question
+
+\begin{itemize}
+\tightlist
+\item
+  Determine whether there are differences in rates of stroke and myocardial infarction by gender and race among patients
+\end{itemize}
+
+Hypothesis
+
+\begin{itemize}
+\tightlist
+\item
+  There will be differences in rates of stroke by gender and race
+\item
+  There will be differences in rates of myocardial infarction by gender and race
+\end{itemize}
+
+\hypertarget{case-control-studies}{%
+\section{Case-control studies}\label{case-control-studies}}
+
+\begin{itemize}
+\tightlist
+\item
+  Identify individuals with existing disease/s and \emph{retrospectively} measure exposure
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/study_design/case_control_schematic} 
+
+}
+
+\caption{Case-control schematic}\label{fig:unnamed-chunk-4}
+\end{figure}
+
+\hypertarget{advantages-1}{%
+\subsection{Advantages}\label{advantages-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Good design for rare, chronic and long latency diseases
+\item
+  Relatively inexpensive (population size and time)
+\item
+  Allows for the examination of multiple exposures
+\item
+  Estimate odds ratios
+\item
+  Hospital-based studies and outbreaks
+\end{itemize}
+
+\hypertarget{disadvtanges}{%
+\subsection{Disadvtanges}\label{disadvtanges}}
+
+\begin{itemize}
+\tightlist
+\item
+  Multiple outcomes cannot be studies
+\item
+  Recall bias
+\item
+  Sampling bias
+\item
+  Cannot calculate prevalence, incidence, population relative risk or attributable risk
+\item
+  Beware of reverse causation
+\end{itemize}
+
+\hypertarget{challenges}{%
+\subsection{Challenges}\label{challenges}}
+
+\begin{itemize}
+\tightlist
+\item
+  Selection of controls
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sample size
+  \item
+    Matching (group or individual)
+  \end{itemize}
+\item
+  Selection of cases
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Incident or prevalent cases
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{example-1}{%
+\subsection{Example}\label{example-1}}
+
+Hypothesis
+
+\begin{itemize}
+\tightlist
+\item
+  Buprenorphine-exposed neonates will exhibit less NAS than methadone-exposed neonates
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/study_design/case_control_example} 
+
+}
+
+\caption{Case-control example}\label{fig:unnamed-chunk-5}
+\end{figure}
+
+\hypertarget{cohort-studies}{%
+\section{Cohort studies}\label{cohort-studies}}
+
+\begin{itemize}
+\tightlist
+\item
+  Identify exposed and unexposed individuals and follow them over time measuring outcomes/s (prospective)
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/study_design/cohort_study_schematic} 
+
+}
+
+\caption{Cohort study schematic}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+\hypertarget{prospective-vs-retrospective-cohort-studies}{%
+\subsection{Prospective vs retrospective cohort studies}\label{prospective-vs-retrospective-cohort-studies}}
+
+\begin{itemize}
+\tightlist
+\item
+  Prospective
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Study begins before or after exposure but always before collection of the outcome measure
+  \end{itemize}
+\item
+  Retrospective
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Study begins after collection of the outcome measure
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/study_design/ret_vs_pros_cohort} 
+
+}
+
+\caption{Prospective vs retrospective cohort study}\label{fig:unnamed-chunk-7}
+\end{figure}
+
+\hypertarget{advantages-2}{%
+\subsection{Advantages}\label{advantages-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  Measure population-based incidence
+\item
+  Relative risk and risk ratio estimations
+\item
+  Rare exposures
+\item
+  Temporality
+\item
+  Less likely to be subject to biases (recall and selection as compared to case-control)
+\item
+  Possible to assess multiple exposures and/or outcomes
+\end{itemize}
+
+\hypertarget{disadvantages-1}{%
+\subsection{Disadvantages}\label{disadvantages-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Impractical for rare diseases and diseases with a long latency
+\item
+  Expensive
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Often large study populations
+  \item
+    Time of follow-up
+  \end{itemize}
+\item
+  Biases
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Design: Sampling, ascertainment, and observer
+  \item
+    Study population: Non-response, migration, and loss-to-follow-up
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{example-2}{%
+\subsection{Example}\label{example-2}}
+
+Research question
+
+\begin{itemize}
+\tightlist
+\item
+  Determine whether circulating biomarkers (i.e., C-reactive protein; exhaled breath condensate - pH, hydrogen peroxide, 8-isoprostene, nitrie, nitrate levels; sputum - TNF-\(\alpha\), IL-6, UK-8, IL-1\(\beta\), neutrophil elastase; and fractional exhaled nitric oxide) predict individuals who will benefit from initiation of antibiotic therapy for the treatment of a mild decrease in FEV\textsubscript{1}
+\end{itemize}
+
+Hypothesis
+
+\begin{itemize}
+\tightlist
+\item
+  Biomarkers at the time of presentation with a mild increase in pulmonary symptoms or small decline in FEV\textsubscript{1} can be used to identify which patients require antobiotics to recover.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/study_design/cohort_study_example} 
+
+}
+
+\caption{Cohort study example}\label{fig:unnamed-chunk-8}
+\end{figure}
+
+\hypertarget{important-features}{%
+\subsection{Important features}\label{important-features}}
+
+\begin{itemize}
+\tightlist
+\item
+  How much selection bias was present?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Were only people at risk of the outcome included?
+  \item
+    Was the exposure clear, specific, and measurable?
+  \item
+    Were the exposed and unexposed similar in all important respects except for the exposure?
+  \end{itemize}
+\item
+  Were steps taken to minimize information bias?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Was the outcome clear, specific, and measurable?
+  \item
+    Was the outcome identified in the same way for both groups?
+  \item
+    Was the determination of the outcome made by an observer blinded to treatment?
+  \end{itemize}
+\item
+  How complete were the follow-up of both groups?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    What efforts were made to limit loss-to-follow-up?
+  \item
+    Was loss-to-follow-up similar in both groups?
+  \end{itemize}
+\item
+  Were potential confounding factors sought and controlled for in the study design or analysis?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Did the investigators anticipate and gather information on potential confounding factors?
+  \item
+    What methods were used to assess and control for confounding?
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{randomized-controlled-trials-rcts}{%
+\section{Randomized controlled trials (RCTs)}\label{randomized-controlled-trials-rcts}}
+
+\begin{itemize}
+\tightlist
+\item
+  Experimental: exposure is assigned
+\item
+  Randomization assignment
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Random allocation of exposure or treatment
+  \item
+    Results (or should result) in two equivalent groups on all measured and unmeasured confounders
+  \item
+    Gold standard for causal inference
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{advantages-3}{%
+\subsection{Advantages}\label{advantages-3}}
+
+\begin{itemize}
+\tightlist
+\item
+  Least subject to biases of all study designs (\textbf{IF} designed and implemented well\ldots!)
+\end{itemize}
+
+\hypertarget{disadvantages-2}{%
+\subsection{Disadvantages}\label{disadvantages-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  Intent-to-treat
+\item
+  Loss-to-follow-up
+\item
+  Randomization issues
+\item
+  Not all exposures can be ``treatments,'' i.e., are assignable
+\item
+  Some exposures/treatments cannot be ethically randomized
+\end{itemize}
+
+\hypertarget{example-3}{%
+\subsection{Example}\label{example-3}}
+
+Research question
+
+\begin{itemize}
+\tightlist
+\item
+  To determine whether resident's attitude and skills in diabetes management and counseling change after a curricular intervention
+\item
+  To determine whether patient outcomes related to diabetes (e.g., weight, smoking status) change after a curricular intervention among residents
+\end{itemize}
+
+Hypothesis
+
+\begin{itemize}
+\tightlist
+\item
+  Attiudes and skills related to diabetes management and counseling will improve among residents after a curricular intervention
+\item
+  Fewer patients with diabetes will smoke over time after curricular intervention among residents
+\end{itemize}
+
+\hypertarget{randomization-strategies}{%
+\subsection{Randomization strategies}\label{randomization-strategies}}
+
+\begin{itemize}
+\tightlist
+\item
+  Randomly assigned
+\item
+  Quasi-randomization
+\item
+  Block randomization
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Method of randomization that ensures that at any point in the trial, roughly equal numbers of participants have been allocated to the comparison groups
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{study-design-flowchart}{%
+\section{Study design flowchart}\label{study-design-flowchart}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/study_design/study_design_flowchart} 
+
+}
+
+\caption{Study design flowchart}\label{fig:unnamed-chunk-9}
+\end{figure}
 
 \hypertarget{confounding}{%
 \chapter{Confounding bias}\label{confounding}}
@@ -255,7 +710,7 @@ A confounding factor must:
 
 }
 
-\caption{Example of mediator}\label{fig:unnamed-chunk-3}
+\caption{Example of mediator}\label{fig:unnamed-chunk-10}
 \end{figure}
 
 \begin{itemize}
@@ -272,7 +727,7 @@ Another example: Fluoridation, Diet sugar, and Tooth decay
 
 }
 
-\caption{Example of a collider}\label{fig:unnamed-chunk-4}
+\caption{Example of a collider}\label{fig:unnamed-chunk-11}
 \end{figure}
 
 \hypertarget{confounding-is-structural}{%
@@ -324,7 +779,7 @@ So
 
 }
 
-\caption{Example of confounding}\label{fig:unnamed-chunk-5}
+\caption{Example of confounding}\label{fig:unnamed-chunk-12}
 \end{figure}
 
 \begin{itemize}
@@ -351,7 +806,7 @@ So
 
 }
 
-\caption{An open backdoor path}\label{fig:unnamed-chunk-6}
+\caption{An open backdoor path}\label{fig:unnamed-chunk-13}
 \end{figure}
 
 In the above example (Fig. 2.4), a backdoor path is open through the orange arrows. The effect of the exposure on the outcome is \textbf{not} identified.
@@ -370,7 +825,7 @@ In the above example (Fig. 2.4), a backdoor path is open through the orange arro
 
 }
 
-\caption{Conditioning on confounder W1 closes backdoor path}\label{fig:unnamed-chunk-7}
+\caption{Conditioning on confounder W1 closes backdoor path}\label{fig:unnamed-chunk-14}
 \end{figure}
 
 In the above example (Fig. 2.5), a backdoor path starting from A is blocked at W1. The effect of A (the exposure) on Y (the outcome) \textbf{is} identified.
@@ -389,7 +844,7 @@ In the above example (Fig. 2.5), a backdoor path starting from A is blocked at W
 
 }
 
-\caption{Unmeasured factors (U) may still lead to confounding}\label{fig:unnamed-chunk-8}
+\caption{Unmeasured factors (U) may still lead to confounding}\label{fig:unnamed-chunk-15}
 \end{figure}
 
 In the above example (Fig 2.6), a backdoor path is blocked at W1, but it is open through U. The effect of A on Y is \textbf{not} identified.
@@ -408,7 +863,7 @@ In the above example (Fig 2.6), a backdoor path is blocked at W1, but it is open
 
 }
 
-\caption{Colliders (W1) block backdoor paths}\label{fig:unnamed-chunk-9}
+\caption{Colliders (W1) block backdoor paths}\label{fig:unnamed-chunk-16}
 \end{figure}
 
 In the above example (Fig 2.7), a backdoor path starting from A is blocked at W1. The effect of A on Y \textbf{is} identified.
@@ -427,7 +882,7 @@ In the above example (Fig 2.7), a backdoor path starting from A is blocked at W1
 
 }
 
-\caption{Colliders (W1) block backdoor paths}\label{fig:unnamed-chunk-10}
+\caption{Colliders (W1) block backdoor paths}\label{fig:unnamed-chunk-17}
 \end{figure}
 
 In the above example (Fig 2.8), a backdoor path starting from A is opened by condition on W1. The effect of A on Y is \textbf{not} identified.
@@ -446,7 +901,7 @@ In the above example (Fig 2.8), a backdoor path starting from A is opened by con
 
 }
 
-\caption{Conditioning on descendant of collider opens backdoor path}\label{fig:unnamed-chunk-11}
+\caption{Conditioning on descendant of collider opens backdoor path}\label{fig:unnamed-chunk-18}
 \end{figure}
 
 In the above example (Fig 2.9), a backdoor path starting from A is opened by conditioning on W3. The effect of A on Y is \textbf{not} identified.
@@ -477,7 +932,7 @@ In the above example (Fig 2.9), a backdoor path starting from A is opened by con
 
 }
 
-\caption{Types of error}\label{fig:unnamed-chunk-12}
+\caption{Types of error}\label{fig:unnamed-chunk-19}
 \end{figure}
 
 There are three broad types of systematic error in epidemiologic studies: selection bias, information bias, and confounding.
@@ -490,7 +945,7 @@ Random error differs from systematic error in that its error gets smaller as the
 
 }
 
-\caption{Visualization of precision and validity}\label{fig:unnamed-chunk-13}
+\caption{Visualization of precision and validity}\label{fig:unnamed-chunk-20}
 \end{figure}
 
 \hypertarget{selection-bias-definitions}{%
@@ -556,7 +1011,7 @@ There are some more complex ways that selection bias can be captured in a DAG.
 
 }
 
-\caption{Examples of selection bias in DAGs}\label{fig:unnamed-chunk-14}
+\caption{Examples of selection bias in DAGs}\label{fig:unnamed-chunk-21}
 \end{figure}
 
 In Fig. 3.3.a., conditioning on the collider, C, opens a backdoor pathway between the exposure, A, and the outcome, Y. This path is \(A \leftarrow W \rightarrow \fbox{C} \leftarrow L \leftarrow U \rightarrow Y\).
@@ -578,7 +1033,7 @@ Take, for example, the question: did it rain last night? Suppose we only observe
 
 }
 
-\caption{Examples of selection bias in DAGs}\label{fig:unnamed-chunk-15}
+\caption{Examples of selection bias in DAGs}\label{fig:unnamed-chunk-22}
 \end{figure}
 
 The above figure graphically depicts the traditional (Fig 3.4.a) and structural (Fig 3.4.b) definitions of selection bias.
