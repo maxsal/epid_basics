@@ -18,6 +18,7 @@ fig:unnamed-chunk-19
 fig:unnamed-chunk-20
 fig:unnamed-chunk-21
 fig:unnamed-chunk-22
+fig:unnamed-chunk-23
 introduction
 study-design
 cross-sectional-studies
@@ -66,4 +67,7 @@ selection-bias-in-cohort-studies
 selection-bias-in-cross-sectional-studies
 selection-bias-in-randomized-control-trials-rct
 key-points
+regression
+linear-regression
+multiple-linear-regression
 literature
