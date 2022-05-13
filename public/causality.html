@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 2 Causality | Epidemiology Basics</title>
+<meta name="author" content="Max Salvatore">
+<meta name="description" content="Material excerpted and adapted from Lindsay Kobayashi, PhD for EPID601 at the University of Michigan School of Public Health Epidemiology is concerned with identifying causes of health outcomes in...">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta property="og:title" content="Chapter 2 Causality | Epidemiology Basics">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Material excerpted and adapted from Lindsay Kobayashi, PhD for EPID601 at the University of Michigan School of Public Health Epidemiology is concerned with identifying causes of health outcomes in...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 2 Causality | Epidemiology Basics">
+<meta name="twitter:description" content="Material excerpted and adapted from Lindsay Kobayashi, PhD for EPID601 at the University of Michigan School of Public Health Epidemiology is concerned with identifying causes of health outcomes in...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Epidemiology Basics</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="active" href="causality.html"><span class="header-section-number">2</span> Causality</a></li>
+<li><a class="" href="study-design.html"><span class="header-section-number">3</span> Study design</a></li>
+<li><a class="" href="confounding.html"><span class="header-section-number">4</span> Confounding bias</a></li>
+<li><a class="" href="selection-bias.html"><span class="header-section-number">5</span> Selection bias</a></li>
+<li><a class="" href="regression.html"><span class="header-section-number">6</span> Regression</a></li>
+<li><a class="" href="literature.html"><span class="header-section-number">7</span> Literature</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="causality" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> Causality<a class="anchor" aria-label="anchor" href="#causality"><i class="fas fa-link"></i></a>
+</h1>
+<p><em>Material excerpted and adapted from Lindsay Kobayashi, PhD for EPID601 at the University of Michigan School of Public Health</em></p>
+<p>Epidemiology is concerned with identifying causes of health outcomes in order to inform effective and equitable interventions to improve them.</p>
+<p>What is a cause?</p>
+<ul>
+<li>“An antecedent event, condition or characteristic that was necessary for the occurrence of the disease at the moment it occurred, given that other characteristics are fixed.”</li>
+</ul>
+<div id="three-criteria-for-causation" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Three criteria for causation<a class="anchor" aria-label="anchor" href="#three-criteria-for-causation"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>A causal relationship between two variables must have a temporal order, in which the cause must precede the effect in time (i.e., if A is a cause and B is an effect, then A must occur before B).</li>
+<li>The two variables should be empirically correlated with one another.</li>
+<li>The observed empirical correlation between two variables cannot be explained away as the result of a third variable that causes both A and B. In other words, the relationship is not spurious and occurs regularly.</li>
+</ol>
+</div>
+<div id="probabilistic-approach" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> Probabilistic approach<a class="anchor" aria-label="anchor" href="#probabilistic-approach"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>In epidemiology, the deterministic concept of causation is supplemented or replaced with probabilistic methods so that instead of demonstrating causality in individuals, we make causal inferences about a hypothesized relation between a given exposure and a disease in a particular population.
+<ul>
+<li>Probabilistic – X leads to a distribution of possible outcomes in a population (or a % probability)</li>
+<li>Deterministic – X leads to an outcome</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="four-causal-types" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> Four causal types<a class="anchor" aria-label="anchor" href="#four-causal-types"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>Type 1: Doomed</li>
+</ol>
+<ul>
+<li>Disease occurs with or without exposure</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Type 2: Effect causative</li>
+</ol>
+<ul>
+<li>Disease occurs if and only if person exposed</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Type 3: Effect preventive</li>
+</ol>
+<ul>
+<li>Disease occurs if and only if person unexposed</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Type 4: Immune</li>
+</ol>
+<ul>
+<li>Disease does not occur with or without exposure</li>
+</ul>
+<p>Populations consist of individuals of all four causal types</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">Causal type</th>
+<th align="left">Effect</th>
+<th align="left">Disease outcome if exposed</th>
+<th align="left">Disease outcome if unexposed</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Type 1</td>
+<td align="left">No effect (doomed)</td>
+<td align="left">Case</td>
+<td align="left">Case</td>
+</tr>
+<tr class="even">
+<td align="left">Type 2</td>
+<td align="left">Effect causative</td>
+<td align="left">Case</td>
+<td align="left">Noncase</td>
+</tr>
+<tr class="odd">
+<td align="left">Type 3</td>
+<td align="left">Effect preventive</td>
+<td align="left">Noncase</td>
+<td align="left">Case</td>
+</tr>
+<tr class="even">
+<td align="left">Type 4</td>
+<td align="left">No effect (immune)</td>
+<td align="left">Noncase</td>
+<td align="left">Noncase</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>The exposure has an effect on the disease in Types 2 &amp; 3, but not on Types 1 &amp; 4.</li>
+<li>Cannot observe these types because we cannot observe both exposure states simultaneously in the same individuals, i.e., one exposure condition is counterfactual.
+<ul>
+<li>If we observe an exposed person who becomes a case, we cannot determine whether he/she is a Type 1 or 2; If we observe an unexposed person who becomes a case, we cannot whether he/she is a Type 1 or 3.</li>
+<li>Similarly, if we observe a certain proportion of exposed persons at risk developing a disease in a population, we cannot say how many (if any) were caused by the exposure.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="four-causal-inference-frameworks" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> Four causal inference frameworks<a class="anchor" aria-label="anchor" href="#four-causal-inference-frameworks"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>Sufficient-Component Cause Model</li>
+<li>Bradford-Hill’s Viewpoints/Criteria</li>
+<li>Counterfactual (Potential Outcomes) Framework</li>
+<li>Directed Acyclic Graphs (DAGs)</li>
+</ol>
+<p>We use several models of causation in epidemiology because each model has its own strengths and helps us to examine different epidemiologic concepts</p>
+</div>
+<div id="sufficient-component-cause-model-rothmans-causal-pie-model" class="section level2" number="2.5">
+<h2>
+<span class="header-section-number">2.5</span> 1. Sufficient-component cause model (Rothman’s Causal Pie Model)<a class="anchor" aria-label="anchor" href="#sufficient-component-cause-model-rothmans-causal-pie-model"><i class="fas fa-link"></i></a>
+</h2>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="img/causality/causal_pies.png" alt="Causal pies" width="100%"><p class="caption">
+Figure 2.1: Causal pies
+</p>
+</div>
+<ul>
+<li>Theoretical mechanistic model
+<ul>
+<li>Each pie represents a sufficient causal mechanism</li>
+<li>A <strong>sufficient cause</strong> model represents a minimal set of conditions or events that are sufficient for the outcome to occur</li>
+<li>Acknowledges the multifactorial etiology of health outcomes</li>
+</ul>
+</li>
+</ul>
+<div id="example" class="section level3" number="2.5.1">
+<h3>
+<span class="header-section-number">2.5.1</span> Example<a class="anchor" aria-label="anchor" href="#example"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="img/causality/causal_pies_example.png" alt="Causal pies example" width="100%"><p class="caption">
+Figure 2.2: Causal pies example
+</p>
+</div>
+<p>The above figure represents hypothetical sufficient cause models for tuberculosis (TB) infection. U represents unknown causal components. The presence of each causal component implies that their absence (e.g., T=0) would block occurrence of the outcome.</p>
+<div id="definitions" class="section level4" number="2.5.1.1">
+<h4>
+<span class="header-section-number">2.5.1.1</span> Definitions<a class="anchor" aria-label="anchor" href="#definitions"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>
+<strong>Component cause</strong>: an event or condition that plays a necessary role in the occurrence of some cases of a given disease</li>
+<li>
+<strong>Necessary cause</strong>: an event or condition that plays a necessary role in the occurrence of all cases of a given disease; must be present for the disease to occur.</li>
+<li>
+<strong>Causal complement</strong>: the other factors which are necessary and sufficient condition for a factor to produce disease</li>
+</ul>
+</div>
+<div id="benefits-of-sufficient-cause-model" class="section level4" number="2.5.1.2">
+<h4>
+<span class="header-section-number">2.5.1.2</span> Benefits of sufficient-cause model<a class="anchor" aria-label="anchor" href="#benefits-of-sufficient-cause-model"><i class="fas fa-link"></i></a>
+</h4>
+<p>Helps us to understand</p>
+<ul>
+<li>Multifactorial nature of disease causation</li>
+<li>That there is often an unknown (U) contribution to disease causation
+<ul>
+<li>The composition of U may vary between people/populations</li>
+</ul>
+</li>
+<li>The fraction of a given disease attributable to its component causes often sums to &gt;100%
+<ul>
+<li>This is due to the multifactorial nature of disease etiology</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="criticisms-of-sufficient-cause-model" class="section level4" number="2.5.1.3">
+<h4>
+<span class="header-section-number">2.5.1.3</span> Criticisms of sufficient-cause model<a class="anchor" aria-label="anchor" href="#criticisms-of-sufficient-cause-model"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>More useful on a conceptual basis than in application</li>
+<li>Does not depict:
+<ul>
+<li>Sequential mechanisms (timing of causal components)</li>
+<li>Direct vs. indirect effects of component causes</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="bradford-hills-viewpoints" class="section level2" number="2.6">
+<h2>
+<span class="header-section-number">2.6</span> 2. Bradford-Hill’s Viewpoints<a class="anchor" aria-label="anchor" href="#bradford-hills-viewpoints"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>Strength of Association</li>
+</ol>
+<ul>
+<li>The stronger the association the more likely that the relationship is causal (not representing bias or error)</li>
+<li>Observation of a weak observation (RR&lt;~2.0) does not negate the possibility of causality</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Consistency</li>
+</ol>
+<ul>
+<li>Repeated observation of an association in different populations under different circumstances</li>
+<li>Consistency of results across epidemiologic studies gets at the heart of inductive reasoning and is used to infer causality in observational studies</li>
+<li>Should be viewed cautiously, as it may just reflect consistency of confounding or bias across studies</li>
+<li>Also, may result from publication bias whereby “positive” results are more likely to be published</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Specificity</li>
+</ol>
+<ul>
+<li>Cause leads to a single effect, not multiple effects</li>
+<li>This criteria is INVALID</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Temporality</li>
+</ol>
+<ul>
+<li>Exposure must precede the onset of disease</li>
+<li>Essential for causation</li>
+<li>Can be difficult to establish temporality</li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>Biological gradient (dose-response relationship)</li>
+</ol>
+<ul>
+<li>Relationship between magnitude (dose) of exposure and risk of outcome is regarded as strong evidence</li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li>Plausibility</li>
+</ol>
+<ul>
+<li>A scientifically plausible mechanism between exposure and outcome is helpful</li>
+<li>Should be some biological rationale</li>
+<li>Hill noted that knowledge of the mechanism is limited by the current state of evidence</li>
+<li>Plausibility can change with time as knowledge grows</li>
+</ul>
+<ol start="7" style="list-style-type: decimal">
+<li>Coherence</li>
+</ol>
+<ul>
+<li>Implies a cause-and-effect interpretation for an association does not conflict with what is known of the natural history and biology of disease</li>
+</ul>
+<ol start="8" style="list-style-type: decimal">
+<li>Experimental evidence</li>
+</ol>
+<ul>
+<li>Laboratory experiments in animals or humans</li>
+<li>Often not ethical or possible to randomly assign exposures – we can’t always get experimental data</li>
+</ul>
+<ol start="9" style="list-style-type: decimal">
+<li>Analogy</li>
+</ol>
+<ul>
+<li>The effect of similar factors may be considered</li>
+<li>Not a useful criterion</li>
+</ul>
+<div id="neyman-rubin-counterfactual-framework" class="section level3" number="2.6.1">
+<h3>
+<span class="header-section-number">2.6.1</span> 3. Neyman-Rubin Counterfactual Framework<a class="anchor" aria-label="anchor" href="#neyman-rubin-counterfactual-framework"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Also called Rubin Causal Model, Potential Outcomes Model, or simply Counterfactual Framework</li>
+<li>Counterfactual - contrary to the observed fact</li>
+<li>Asks the question, would the outcome have been different if the exposure was not present?</li>
+</ul>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="index.html"><span class="header-section-number">1</span> Introduction</a></div>
+<div class="next"><a href="study-design.html"><span class="header-section-number">3</span> Study design</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#causality"><span class="header-section-number">2</span> Causality</a></li>
+<li><a class="nav-link" href="#three-criteria-for-causation"><span class="header-section-number">2.1</span> Three criteria for causation</a></li>
+<li><a class="nav-link" href="#probabilistic-approach"><span class="header-section-number">2.2</span> Probabilistic approach</a></li>
+<li><a class="nav-link" href="#four-causal-types"><span class="header-section-number">2.3</span> Four causal types</a></li>
+<li><a class="nav-link" href="#four-causal-inference-frameworks"><span class="header-section-number">2.4</span> Four causal inference frameworks</a></li>
+<li>
+<a class="nav-link" href="#sufficient-component-cause-model-rothmans-causal-pie-model"><span class="header-section-number">2.5</span> 1. Sufficient-component cause model (Rothman’s Causal Pie Model)</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example"><span class="header-section-number">2.5.1</span> Example</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#bradford-hills-viewpoints"><span class="header-section-number">2.6</span> 2. Bradford-Hill’s Viewpoints</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#neyman-rubin-counterfactual-framework"><span class="header-section-number">2.6.1</span> 3. Neyman-Rubin Counterfactual Framework</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Epidemiology Basics</strong>" was written by Max Salvatore. It was last built on 2022-05-13.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

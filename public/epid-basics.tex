@@ -1,0 +1,1648 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\title{Epidemiology Basics}
+\author{Max Salvatore}
+\date{2022-05-13}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Epidemiology Basics},
+  pdfauthor={Max Salvatore},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
+👋 Hello and welcome! This book will contain notes on a variety of epidemiologic topics including study design and biases.
+
+⚠️ At present, this is a \textbf{not a functional book} and the content is \textbf{a work in progress} 🔧.
+
+\textbf{The current version of the book has not been reviewed for correctness and references.}
+
+\hypertarget{causality}{%
+\chapter{Causality}\label{causality}}
+
+\emph{Material excerpted and adapted from Lindsay Kobayashi, PhD for EPID601 at the University of Michigan School of Public Health}
+
+Epidemiology is concerned with identifying causes of health outcomes in order to inform effective and equitable interventions to improve them.
+
+What is a cause?
+
+\begin{itemize}
+\tightlist
+\item
+  ``An antecedent event, condition or characteristic that was necessary for the occurrence of the disease at the moment it occurred, given that other characteristics are fixed.''
+\end{itemize}
+
+\hypertarget{three-criteria-for-causation}{%
+\section{Three criteria for causation}\label{three-criteria-for-causation}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  A causal relationship between two variables must have a temporal order, in which the cause must precede the effect in time (i.e., if A is a cause and B is an effect, then A must occur before B).
+\item
+  The two variables should be empirically correlated with one another.
+\item
+  The observed empirical correlation between two variables cannot be explained away as the result of a third variable that causes both A and B. In other words, the relationship is not spurious and occurs regularly.
+\end{enumerate}
+
+\hypertarget{probabilistic-approach}{%
+\section{Probabilistic approach}\label{probabilistic-approach}}
+
+\begin{itemize}
+\tightlist
+\item
+  In epidemiology, the deterministic concept of causation is supplemented or replaced with probabilistic methods so that instead of demonstrating causality in individuals, we make causal inferences about a hypothesized relation between a given exposure and a disease in a particular population.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Probabilistic -- X leads to a distribution of possible outcomes in a population (or a \% probability)
+  \item
+    Deterministic -- X leads to an outcome
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{four-causal-types}{%
+\section{Four causal types}\label{four-causal-types}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Type 1: Doomed
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Disease occurs with or without exposure
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Type 2: Effect causative
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Disease occurs if and only if person exposed
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Type 3: Effect preventive
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Disease occurs if and only if person unexposed
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Type 4: Immune
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Disease does not occur with or without exposure
+\end{itemize}
+
+Populations consist of individuals of all four causal types
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule
+Causal type & Effect & Disease outcome if exposed & Disease outcome if unexposed \\
+\midrule
+\endhead
+Type 1 & No effect (doomed) & Case & Case \\
+Type 2 & Effect causative & Case & Noncase \\
+Type 3 & Effect preventive & Noncase & Case \\
+Type 4 & No effect (immune) & Noncase & Noncase \\
+\bottomrule
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
+  The exposure has an effect on the disease in Types 2 \& 3, but not on Types 1 \& 4.
+\item
+  Cannot observe these types because we cannot observe both exposure states simultaneously in the same individuals, i.e., one exposure condition is counterfactual.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If we observe an exposed person who becomes a case, we cannot determine whether he/she is a Type 1 or 2; If we observe an unexposed person who becomes a case, we cannot whether he/she is a Type 1 or 3.
+  \item
+    Similarly, if we observe a certain proportion of exposed persons at risk developing a disease in a population, we cannot say how many (if any) were caused by the exposure.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{four-causal-inference-frameworks}{%
+\section{Four causal inference frameworks}\label{four-causal-inference-frameworks}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Sufficient-Component Cause Model
+\item
+  Bradford-Hill's Viewpoints/Criteria
+\item
+  Counterfactual (Potential Outcomes) Framework
+\item
+  Directed Acyclic Graphs (DAGs)
+\end{enumerate}
+
+We use several models of causation in epidemiology because each model has its own strengths and helps us to examine different epidemiologic concepts
+
+\hypertarget{sufficient-component-cause-model-rothmans-causal-pie-model}{%
+\section{1. Sufficient-component cause model (Rothman's Causal Pie Model)}\label{sufficient-component-cause-model-rothmans-causal-pie-model}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/causality/causal_pies} 
+
+}
+
+\caption{Causal pies}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  Theoretical mechanistic model
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Each pie represents a sufficient causal mechanism
+  \item
+    A \textbf{sufficient cause} model represents a minimal set of conditions or events that are sufficient for the outcome to occur
+  \item
+    Acknowledges the multifactorial etiology of health outcomes
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{example}{%
+\subsection{Example}\label{example}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/causality/causal_pies_example} 
+
+}
+
+\caption{Causal pies example}\label{fig:unnamed-chunk-4}
+\end{figure}
+
+The above figure represents hypothetical sufficient cause models for tuberculosis (TB) infection. U represents unknown causal components. The presence of each causal component implies that their absence (e.g., T=0) would block occurrence of the outcome.
+
+\hypertarget{definitions}{%
+\subsubsection{Definitions}\label{definitions}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Component cause}: an event or condition that plays a necessary role in the occurrence of some cases of a given disease
+\item
+  \textbf{Necessary cause}: an event or condition that plays a necessary role in the occurrence of all cases of a given disease; must be present for the disease to occur.
+\item
+  \textbf{Causal complement}: the other factors which are necessary and sufficient condition for a factor to produce disease
+\end{itemize}
+
+\hypertarget{benefits-of-sufficient-cause-model}{%
+\subsubsection{Benefits of sufficient-cause model}\label{benefits-of-sufficient-cause-model}}
+
+Helps us to understand
+
+\begin{itemize}
+\tightlist
+\item
+  Multifactorial nature of disease causation
+\item
+  That there is often an unknown (U) contribution to disease causation
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The composition of U may vary between people/populations
+  \end{itemize}
+\item
+  The fraction of a given disease attributable to its component causes often sums to \textgreater100\%
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This is due to the multifactorial nature of disease etiology
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{criticisms-of-sufficient-cause-model}{%
+\subsubsection{Criticisms of sufficient-cause model}\label{criticisms-of-sufficient-cause-model}}
+
+\begin{itemize}
+\tightlist
+\item
+  More useful on a conceptual basis than in application
+\item
+  Does not depict:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sequential mechanisms (timing of causal components)
+  \item
+    Direct vs.~indirect effects of component causes
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{bradford-hills-viewpoints}{%
+\section{2. Bradford-Hill's Viewpoints}\label{bradford-hills-viewpoints}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Strength of Association
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The stronger the association the more likely that the relationship is causal (not representing bias or error)
+\item
+  Observation of a weak observation (RR\textless\textasciitilde2.0) does not negate the possibility of causality
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Consistency
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Repeated observation of an association in different populations under different circumstances
+\item
+  Consistency of results across epidemiologic studies gets at the heart of inductive reasoning and is used to infer causality in observational studies
+\item
+  Should be viewed cautiously, as it may just reflect consistency of confounding or bias across studies
+\item
+  Also, may result from publication bias whereby ``positive'' results are more likely to be published
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Specificity
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Cause leads to a single effect, not multiple effects
+\item
+  This criteria is INVALID
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Temporality
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Exposure must precede the onset of disease
+\item
+  Essential for causation
+\item
+  Can be difficult to establish temporality
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Biological gradient (dose-response relationship)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Relationship between magnitude (dose) of exposure and risk of outcome is regarded as strong evidence
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Plausibility
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  A scientifically plausible mechanism between exposure and outcome is helpful
+\item
+  Should be some biological rationale
+\item
+  Hill noted that knowledge of the mechanism is limited by the current state of evidence
+\item
+  Plausibility can change with time as knowledge grows
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Coherence
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Implies a cause-and-effect interpretation for an association does not conflict with what is known of the natural history and biology of disease
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Experimental evidence
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Laboratory experiments in animals or humans
+\item
+  Often not ethical or possible to randomly assign exposures -- we can't always get experimental data
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  Analogy
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The effect of similar factors may be considered
+\item
+  Not a useful criterion
+\end{itemize}
+
+\hypertarget{neyman-rubin-counterfactual-framework}{%
+\subsection{3. Neyman-Rubin Counterfactual Framework}\label{neyman-rubin-counterfactual-framework}}
+
+\begin{itemize}
+\tightlist
+\item
+  Also called Rubin Causal Model, Potential Outcomes Model, or simply Counterfactual Framework
+\item
+  Counterfactual - contrary to the observed fact
+\item
+  Asks the question, would the outcome have been different if the exposure was not present?
+\end{itemize}
+
+\hypertarget{study-design}{%
+\chapter{Study design}\label{study-design}}
+
+\emph{Material adapted from \href{https://www.hopkinsmedicine.org/gynecology_obstetrics/pdfs/medstudent/rtc2014/Epi\%20Study\%20Design\%20and\%20Exploratory\%20Analyses_abb.pdf}{slides by Jack Jennings, PhD, MPH}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/study_design/study_design_schematic} 
+
+}
+
+\caption{Comparison of study designs}\label{fig:unnamed-chunk-5}
+\end{figure}
+
+\hypertarget{cross-sectional-studies}{%
+\section{Cross-sectional studies}\label{cross-sectional-studies}}
+
+\begin{itemize}
+\tightlist
+\item
+  Measure existing disease and current exposure levels at one point in time
+\item
+  Sample without knowledge of exposure or disease
+\item
+  Ex. prevalence studies
+\end{itemize}
+
+\hypertarget{advantages}{%
+\subsection{Advantages}\label{advantages}}
+
+\begin{itemize}
+\tightlist
+\item
+  Often early study design in a line of investigation
+\item
+  Good for hypothesis generation
+\item
+  Relatively easy, quick and inexpensive \ldots{} \emph{depends on question}
+\item
+  Examin multiple exposures or outcomes
+\item
+  Estimate prevalence of disease and exposures
+\end{itemize}
+
+\hypertarget{disadvantages}{%
+\subsection{Disadvantages}\label{disadvantages}}
+
+\begin{itemize}
+\tightlist
+\item
+  Cannot infer causality
+\item
+  Prevalent vs.~incident disease
+\item
+  May miss latent disease
+\item
+  May be subject to recall bias
+\end{itemize}
+
+\hypertarget{example-1}{%
+\subsection{Example}\label{example-1}}
+
+Research question
+
+\begin{itemize}
+\tightlist
+\item
+  Determine whether there are differences in rates of stroke and myocardial infarction by gender and race among patients
+\end{itemize}
+
+Hypothesis
+
+\begin{itemize}
+\tightlist
+\item
+  There will be differences in rates of stroke by gender and race
+\item
+  There will be differences in rates of myocardial infarction by gender and race
+\end{itemize}
+
+\hypertarget{case-control-studies}{%
+\section{Case-control studies}\label{case-control-studies}}
+
+\begin{itemize}
+\tightlist
+\item
+  Identify individuals with existing disease/s and \emph{retrospectively} measure exposure
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/study_design/case_control_schematic} 
+
+}
+
+\caption{Case-control schematic}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+\hypertarget{advantages-1}{%
+\subsection{Advantages}\label{advantages-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Good design for rare, chronic and long latency diseases
+\item
+  Relatively inexpensive (population size and time)
+\item
+  Allows for the examination of multiple exposures
+\item
+  Estimate odds ratios
+\item
+  Hospital-based studies and outbreaks
+\end{itemize}
+
+\hypertarget{disadvtanges}{%
+\subsection{Disadvtanges}\label{disadvtanges}}
+
+\begin{itemize}
+\tightlist
+\item
+  Multiple outcomes cannot be studies
+\item
+  Recall bias
+\item
+  Sampling bias
+\item
+  Cannot calculate prevalence, incidence, population relative risk or attributable risk
+\item
+  Beware of reverse causation
+\end{itemize}
+
+\hypertarget{challenges}{%
+\subsection{Challenges}\label{challenges}}
+
+\begin{itemize}
+\tightlist
+\item
+  Selection of controls
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sample size
+  \item
+    Matching (group or individual)
+  \end{itemize}
+\item
+  Selection of cases
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Incident or prevalent cases
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{example-2}{%
+\subsection{Example}\label{example-2}}
+
+Hypothesis
+
+\begin{itemize}
+\tightlist
+\item
+  Buprenorphine-exposed neonates will exhibit less NAS than methadone-exposed neonates
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/study_design/case_control_example} 
+
+}
+
+\caption{Case-control example}\label{fig:unnamed-chunk-7}
+\end{figure}
+
+\hypertarget{cohort-studies}{%
+\section{Cohort studies}\label{cohort-studies}}
+
+\begin{itemize}
+\tightlist
+\item
+  Identify exposed and unexposed individuals and follow them over time measuring outcomes/s (prospective)
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/study_design/cohort_study_schematic} 
+
+}
+
+\caption{Cohort study schematic}\label{fig:unnamed-chunk-8}
+\end{figure}
+
+\hypertarget{prospective-vs-retrospective-cohort-studies}{%
+\subsection{Prospective vs retrospective cohort studies}\label{prospective-vs-retrospective-cohort-studies}}
+
+\begin{itemize}
+\tightlist
+\item
+  Prospective
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Study begins before or after exposure but always before collection of the outcome measure
+  \end{itemize}
+\item
+  Retrospective
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Study begins after collection of the outcome measure
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/study_design/ret_vs_pros_cohort} 
+
+}
+
+\caption{Prospective vs retrospective cohort study}\label{fig:unnamed-chunk-9}
+\end{figure}
+
+\hypertarget{advantages-2}{%
+\subsection{Advantages}\label{advantages-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  Measure population-based incidence
+\item
+  Relative risk and risk ratio estimations
+\item
+  Rare exposures
+\item
+  Temporality
+\item
+  Less likely to be subject to biases (recall and selection as compared to case-control)
+\item
+  Possible to assess multiple exposures and/or outcomes
+\end{itemize}
+
+\hypertarget{disadvantages-1}{%
+\subsection{Disadvantages}\label{disadvantages-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Impractical for rare diseases and diseases with a long latency
+\item
+  Expensive
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Often large study populations
+  \item
+    Time of follow-up
+  \end{itemize}
+\item
+  Biases
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Design: Sampling, ascertainment, and observer
+  \item
+    Study population: Non-response, migration, and loss-to-follow-up
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{example-3}{%
+\subsection{Example}\label{example-3}}
+
+Research question
+
+\begin{itemize}
+\tightlist
+\item
+  Determine whether circulating biomarkers (i.e., C-reactive protein; exhaled breath condensate - pH, hydrogen peroxide, 8-isoprostene, nitrie, nitrate levels; sputum - TNF-\(\alpha\), IL-6, UK-8, IL-1\(\beta\), neutrophil elastase; and fractional exhaled nitric oxide) predict individuals who will benefit from initiation of antibiotic therapy for the treatment of a mild decrease in FEV\textsubscript{1}
+\end{itemize}
+
+Hypothesis
+
+\begin{itemize}
+\tightlist
+\item
+  Biomarkers at the time of presentation with a mild increase in pulmonary symptoms or small decline in FEV\textsubscript{1} can be used to identify which patients require antobiotics to recover.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/study_design/cohort_study_example} 
+
+}
+
+\caption{Cohort study example}\label{fig:unnamed-chunk-10}
+\end{figure}
+
+\hypertarget{important-features}{%
+\subsection{Important features}\label{important-features}}
+
+\begin{itemize}
+\tightlist
+\item
+  How much selection bias was present?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Were only people at risk of the outcome included?
+  \item
+    Was the exposure clear, specific, and measurable?
+  \item
+    Were the exposed and unexposed similar in all important respects except for the exposure?
+  \end{itemize}
+\item
+  Were steps taken to minimize information bias?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Was the outcome clear, specific, and measurable?
+  \item
+    Was the outcome identified in the same way for both groups?
+  \item
+    Was the determination of the outcome made by an observer blinded to treatment?
+  \end{itemize}
+\item
+  How complete were the follow-up of both groups?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    What efforts were made to limit loss-to-follow-up?
+  \item
+    Was loss-to-follow-up similar in both groups?
+  \end{itemize}
+\item
+  Were potential confounding factors sought and controlled for in the study design or analysis?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Did the investigators anticipate and gather information on potential confounding factors?
+  \item
+    What methods were used to assess and control for confounding?
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{randomized-controlled-trials-rcts}{%
+\section{Randomized controlled trials (RCTs)}\label{randomized-controlled-trials-rcts}}
+
+\begin{itemize}
+\tightlist
+\item
+  Experimental: exposure is assigned
+\item
+  Randomization assignment
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Random allocation of exposure or treatment
+  \item
+    Results (or should result) in two equivalent groups on all measured and unmeasured confounders
+  \item
+    Gold standard for causal inference
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{advantages-3}{%
+\subsection{Advantages}\label{advantages-3}}
+
+\begin{itemize}
+\tightlist
+\item
+  Least subject to biases of all study designs (\textbf{IF} designed and implemented well\ldots!)
+\end{itemize}
+
+\hypertarget{disadvantages-2}{%
+\subsection{Disadvantages}\label{disadvantages-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  Intent-to-treat
+\item
+  Loss-to-follow-up
+\item
+  Randomization issues
+\item
+  Not all exposures can be ``treatments,'' i.e., are assignable
+\item
+  Some exposures/treatments cannot be ethically randomized
+\end{itemize}
+
+\hypertarget{example-4}{%
+\subsection{Example}\label{example-4}}
+
+Research question
+
+\begin{itemize}
+\tightlist
+\item
+  To determine whether resident's attitude and skills in diabetes management and counseling change after a curricular intervention
+\item
+  To determine whether patient outcomes related to diabetes (e.g., weight, smoking status) change after a curricular intervention among residents
+\end{itemize}
+
+Hypothesis
+
+\begin{itemize}
+\tightlist
+\item
+  Attiudes and skills related to diabetes management and counseling will improve among residents after a curricular intervention
+\item
+  Fewer patients with diabetes will smoke over time after curricular intervention among residents
+\end{itemize}
+
+\hypertarget{randomization-strategies}{%
+\subsection{Randomization strategies}\label{randomization-strategies}}
+
+\begin{itemize}
+\tightlist
+\item
+  Randomly assigned
+\item
+  Quasi-randomization
+\item
+  Block randomization
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Method of randomization that ensures that at any point in the trial, roughly equal numbers of participants have been allocated to the comparison groups
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{study-design-flowchart}{%
+\section{Study design flowchart}\label{study-design-flowchart}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/study_design/study_design_flowchart} 
+
+}
+
+\caption{Study design flowchart}\label{fig:unnamed-chunk-11}
+\end{figure}
+
+\hypertarget{confounding}{%
+\chapter{Confounding bias}\label{confounding}}
+
+\hypertarget{identifying-confounding}{%
+\section{Identifying confounding}\label{identifying-confounding}}
+
+\hypertarget{data-driven-approaches}{%
+\subsection{Data-driven approaches}\label{data-driven-approaches}}
+
+\begin{itemize}
+\tightlist
+\item
+  There are many data-driven approaches that are used to identify confounding that are based on statistical approaches to examine associations in study data
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Stepwise regression
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Throw all suspected confounders into a model and remove those not associated with the outcome (e.g., p \textgreater{} 0.05) in a stepwise fashion
+    \end{itemize}
+  \item
+    Change-in-estimate approach (10\% rule)
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Throw all suspected confounders into a model, retain those whose removal changes the exposure -\textgreater{} outcome effect estimate by \textgreater{} 10\%
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\textbf{\emph{But}} confounding is about \textbf{causal} relationships, thus it is best to identifying confounding by using causal relationships
+
+\begin{itemize}
+\tightlist
+\item
+  The observed data structure and \emph{a prior} theory or knowledge about the suspected data structure are used to identify confounding
+\item
+  This is better than stepwise regression or the change-in-estimate approach, which use arbitrary rules based on statistical significance
+\end{itemize}
+
+\hypertarget{structural-approach}{%
+\subsection{Structural approach}\label{structural-approach}}
+
+\hypertarget{three-criteria}{%
+\subsubsection{Three criteria}\label{three-criteria}}
+
+A confounding factor must:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Be a cause of the outcome under study
+\item
+  Be associated with the exposure under study in the source population
+\item
+  Must not be caused by the exposure or disease
+\end{enumerate}
+
+\hypertarget{criteria-1-confounding-factor-must-cause-the-outcome-either-directly-or-indirectly}{%
+\subsubsection{Criteria 1: Confounding factor must cause the outcome (either directly or indirectly)}\label{criteria-1-confounding-factor-must-cause-the-outcome-either-directly-or-indirectly}}
+
+\begin{itemize}
+\tightlist
+\item
+  A confounding factor must be a cause of the outcome
+
+  \begin{itemize}
+  \tightlist
+  \item
+    May be an actual cause of the disease
+  \item
+    May be a surrogate/proxy or indirect cause of the disease
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Household income as a surrogate for a milieu of social factors correlated with income
+    \item
+      Education as a proxy for literacy
+    \end{itemize}
+  \item
+    Prior theory or knowledge (not the data itself) is used to determine the relation of the suspected confounding factor to the outcome
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{criteria-2-confounding-factor-must-be-associated-with-the-exposure-in-the-source-population}{%
+\subsubsection{Criteria 2: Confounding factor must be associated with the exposure in the source population}\label{criteria-2-confounding-factor-must-be-associated-with-the-exposure-in-the-source-population}}
+
+\begin{itemize}
+\tightlist
+\item
+  We can generally identify this directly from our data, however varies a bit by design
+\item
+  Cohort Study
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Cohort is source population. Therefore, this relationship can be determined from the observed study data.
+  \end{itemize}
+\item
+  Case-control Study
+
+  \begin{itemize}
+  \tightlist
+  \item
+    In a C-C study, the controls are selected from the source population, however, the control group needs to be very large and have no selection bias or measurement error in order to accurately reflect the association in the source population.
+  \item
+    External information can be used when available, or prior knowledge.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{criteria-3-the-factor-cannot-be-caused-by-the-exposure-or-the-disease}{%
+\subsubsection{Criteria 3: The factor cannot be caused by the exposure or the disease}\label{criteria-3-the-factor-cannot-be-caused-by-the-exposure-or-the-disease}}
+
+\begin{itemize}
+\tightlist
+\item
+  A confounding factor must not be affected by the exposure or the disease.
+\item
+  Two scenarios can occur here:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    The factor that we think is a confounder is actually an intermediate on the causal pathway between exposure and outcome (a \textbf{mediator})
+  \item
+    The factor that we think is a confounder is a common outcome of the exposure and outcome of interest (a \textbf{collider})
+  \end{enumerate}
+\end{itemize}
+
+\hypertarget{intermediate-on-the-causal-pathway-mediator}{%
+\subsubsection{Intermediate on the causal pathway (Mediator)}\label{intermediate-on-the-causal-pathway-mediator}}
+
+\begin{itemize}
+\tightlist
+\item
+  Here, low birth weight is on the causal pathway from maternal smoking and perinatal mortality
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/confounding/mediator_example} 
+
+}
+
+\caption{Example of mediator}\label{fig:unnamed-chunk-12}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  Low birth weight is a \textbf{mediator}. Adjusting for a mediator is referred to as ``over-adjustment''
+\end{itemize}
+
+Another example: Fluoridation, Diet sugar, and Tooth decay
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/confounding/overadjusting_example} 
+
+}
+
+\caption{Example of a collider}\label{fig:unnamed-chunk-13}
+\end{figure}
+
+\hypertarget{confounding-is-structural}{%
+\subsubsection{Confounding is structural}\label{confounding-is-structural}}
+
+\begin{itemize}
+\tightlist
+\item
+  Confounding arises because of how, structurally, the variables are related to each other
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Either how they are naturally related to each other, or, how they are related to each other after an investigator has changed the relationships by adjustmnet, matching, conditioning, etc.
+  \end{itemize}
+\end{itemize}
+
+How do we know what the proper structural relationships are?
+
+\begin{itemize}
+\tightlist
+\item
+  Directed Acyclic Graphs (DAGs)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    NOT a method of data analysis
+  \item
+    They are used to IDENTIFY confounders based on the assumptions we are willing to make
+  \end{itemize}
+\item
+  DAGs help us to depict the assumed temporal structure of the relationships between our factors
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Both in the state of nature
+  \item
+    And after investigators have intervened on the natural structure by conditioning on a set of factors
+  \end{itemize}
+\end{itemize}
+
+So
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/confounding/confounding_example} 
+
+}
+
+\caption{Example of confounding}\label{fig:unnamed-chunk-14}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  We want exchangeability of those with low vs.~non-low income, condition on having a mother with diabetes (conditional exchangeability)
+\item
+  The goal is to block all backdoor paths from the exposure to the outcome on the DAG
+\end{itemize}
+
+\hypertarget{dag-rules-for-identifying-confounding}{%
+\subsubsection{DAG rules for identifying confounding}\label{dag-rules-for-identifying-confounding}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  To get from A to Y through a backdoor path, you can move along any path, regardless of the arrow's directionality
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/confounding/dag_rules_1} 
+
+}
+
+\caption{An open backdoor path}\label{fig:unnamed-chunk-15}
+\end{figure}
+
+In the above example (Fig. 2.4), a backdoor path is open through the orange arrows. The effect of the exposure on the outcome is \textbf{not} identified.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Conditioning on a \emph{common cause of the exposure and outcome} (\textbf{confounder}) closes the backdoor path
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/confounding/dag_rules_2} 
+
+}
+
+\caption{Conditioning on confounder W1 closes backdoor path}\label{fig:unnamed-chunk-16}
+\end{figure}
+
+In the above example (Fig. 2.5), a backdoor path starting from A is blocked at W1. The effect of A (the exposure) on Y (the outcome) \textbf{is} identified.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \textbf{Unmeasured} factors (U) may still lead to confounding, even if you closed the backdoor path through measured factors
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/confounding/dag_rules_3} 
+
+}
+
+\caption{Unmeasured factors (U) may still lead to confounding}\label{fig:unnamed-chunk-17}
+\end{figure}
+
+In the above example (Fig 2.6), a backdoor path is blocked at W1, but it is open through U. The effect of A on Y is \textbf{not} identified.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  The existence of a collider will block the backdoor path
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/confounding/dag_rules_4} 
+
+}
+
+\caption{Colliders (W1) block backdoor paths}\label{fig:unnamed-chunk-18}
+\end{figure}
+
+In the above example (Fig 2.7), a backdoor path starting from A is blocked at W1. The effect of A on Y \textbf{is} identified.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Condition on a collider will open the backdoor path
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/confounding/dag_rules_5} 
+
+}
+
+\caption{Colliders (W1) block backdoor paths}\label{fig:unnamed-chunk-19}
+\end{figure}
+
+In the above example (Fig 2.8), a backdoor path starting from A is opened by condition on W1. The effect of A on Y is \textbf{not} identified.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Conditioning on a descendant (outcome) of a collider will open the backdoor path
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/confounding/dag_rules_6} 
+
+}
+
+\caption{Conditioning on descendant of collider opens backdoor path}\label{fig:unnamed-chunk-20}
+\end{figure}
+
+In the above example (Fig 2.9), a backdoor path starting from A is opened by conditioning on W3. The effect of A on Y is \textbf{not} identified.
+
+\hypertarget{quantifying-confounding}{%
+\subsubsection{Quantifying confounding}\label{quantifying-confounding}}
+
+\begin{itemize}
+\tightlist
+\item
+  Non-collapsibility of strata
+
+  \begin{itemize}
+  \tightlist
+  \item
+    When the association of exposure and outcome is different across the strata of a third variable identified as a confounder and the crude (non-stratified) association, then the data are not collapsible and confounding is present
+  \item
+    To be continued\ldots.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{selection-bias}{%
+\chapter{Selection bias}\label{selection-bias}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/selection-bias/types_of_error} 
+
+}
+
+\caption{Types of error}\label{fig:unnamed-chunk-21}
+\end{figure}
+
+There are three broad types of systematic error in epidemiologic studies: selection bias, information bias, and confounding.
+
+Random error differs from systematic error in that its error gets smaller as the sample size (\texttt{n}) gets larger. Systematic error does not get better with larger \texttt{n}. Selection bias is a type of systematic error.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/selection-bias/bullseyes} 
+
+}
+
+\caption{Visualization of precision and validity}\label{fig:unnamed-chunk-22}
+\end{figure}
+
+\hypertarget{selection-bias-definitions}{%
+\section{Selection bias definitions}\label{selection-bias-definitions}}
+
+Selection bias is:
+
+\begin{itemize}
+\tightlist
+\item
+  Distinct from confounding and information bias because of its mechanisms
+\item
+  Similar to confounding because \textbf{exchangeability} is violated
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(Pr[A=a]\) is not independent of \(Y^a\)
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{definitions-1}{%
+\subsection{Definitions}\label{definitions-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Traditional: ``Selection bias is present when individuals have different probabilities of being included (or retained) in a study sample according to relevant characteristics, namely the exposure and outcome of interest.'' (Szklo \& Nieto, 2019)
+\item
+  Structural: ``Bias resulting from conditioning on a common effect (a collider) of two variables, one of which is the exposure or associated with the exposure and the other is either the outcome or associated with the outcome.'' (adapted from Hernán, Hernández-Díaz, \& Robbins 2004)
+\end{itemize}
+
+\hypertarget{selection-bias-in-dags}{%
+\subsection{Selection bias in DAGs}\label{selection-bias-in-dags}}
+
+\hypertarget{brief-review-of-paths}{%
+\subsubsection{Brief review of paths}\label{brief-review-of-paths}}
+
+\begin{itemize}
+\tightlist
+\item
+  \(A \rightarrow Y\) (A causes Y)
+\item
+  \(A \leftarrow C \rightarrow Y\) (A and Y share a common cause; aka confounding)
+\item
+  \(A \rightarrow \fbox{S} \leftarrow Y\) (A and Y share a common effect; S is a collider)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    We must condition on the collider S (adjustment or restriction) or a on a descendant of a collider for us to detect a statistical association between A and Y in this scenario
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{selection-bias-dag-examples}{%
+\subsubsection{Selection bias DAG examples}\label{selection-bias-dag-examples}}
+
+There are some more complex ways that selection bias can be captured in a DAG.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/selection-bias/selection_bias_examples} 
+
+}
+
+\caption{Examples of selection bias in DAGs}\label{fig:unnamed-chunk-23}
+\end{figure}
+
+In Fig. 3.3.a., conditioning on the collider, C, opens a backdoor pathway between the exposure, A, and the outcome, Y. This path is \(A \leftarrow W \rightarrow \fbox{C} \leftarrow L \leftarrow U \rightarrow Y\).
+
+In Fig. 3.3.b., conditioning on C, the descendant of the collider, L, opens a backdoor path.
+
+Here is a motivational example that displays the intuition behind a collider.
+
+\(\text{Rain} \rightarrow \fbox{ Wet sidewalk } \leftarrow \text{Neighbor's sprinkler}\)
+
+Take, for example, the question: did it rain last night? Suppose we only observe when the sidewalk is wet. The sidewalk could be wet for two reasons: (1) it rained or (2) your neighbor ran the sprinkler. If we know the sidewalk is wet and that the neighbor's sprinkler is broken, then it probably rained. Knowing information about one of the causes of a collider gives us information about the other.
+
+\hypertarget{traditional-vs.-structural-definition}{%
+\subsubsection{Traditional vs.~structural definition}\label{traditional-vs.-structural-definition}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/selection-bias/selection_bias_examples} 
+
+}
+
+\caption{Examples of selection bias in DAGs}\label{fig:unnamed-chunk-24}
+\end{figure}
+
+The above figure graphically depicts the traditional (Fig 3.4.a) and structural (Fig 3.4.b) definitions of selection bias.
+
+\hypertarget{examples-of-selection-bias}{%
+\subsection{Examples of selection bias}\label{examples-of-selection-bias}}
+
+\begin{itemize}
+\tightlist
+\item
+  There are many ways a study can be subject to selection bias
+\item
+  Learning about well accepted types of selection bias can help with finding it in our own studies
+\item
+  Differs somewhat by study design: case-control, cohort, and RCT
+\end{itemize}
+
+\hypertarget{selection-bias-in-case-control-studies}{%
+\subsubsection{Selection bias in case-control studies}\label{selection-bias-in-case-control-studies}}
+
+\begin{itemize}
+\tightlist
+\item
+  ``Berkson's bias''
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Particularly relevant for hospital-based case-control studies
+  \item
+    Occurs when \textbf{controls are not selected independent of exposure}
+  \item
+    Case-control studies are thought to be particularly susceptible to selection bias because at the very least \(Y \rightarrow \fbox{S}\)
+  \end{itemize}
+\end{itemize}
+
+Take the DAG in Fig. 3.4.b to represent a hospital-based case-control study of the malnutrition (A) on depression (Y). Because of the study design, those with depression (Y) are more likely to be included in the study (C). Malnutrition by itself is likely to cause somebody to be admitted to the hospital (C). This is called ``Berkson's Bias.''
+
+\hypertarget{selection-bias-in-cohort-studies}{%
+\subsubsection{Selection bias in cohort studies}\label{selection-bias-in-cohort-studies}}
+
+\begin{itemize}
+\tightlist
+\item
+  Selection bias in cohort studies typically arises because of \textbf{loss to follow-up} or mortality related to both the outcome and the exposure.
+\end{itemize}
+
+Take the DAG in Fig. 3.3.a to represent a cohort study of occupational exposure (A) on risk of stroke (Y). The terrible work conditions of the job (W) is a common cause of exposure (A) and likelihood that a person will quit (C). Underlying health status (U) is a cause of stroke (Y) and causes a person to quit (C) through deteriorating physical health (L). This is also called the ``healthy worker effect.''
+
+\hypertarget{selection-bias-in-cross-sectional-studies}{%
+\subsubsection{Selection bias in cross-sectional studies}\label{selection-bias-in-cross-sectional-studies}}
+
+\begin{itemize}
+\tightlist
+\item
+  Cross-sectional studies are also susceptible to selection bias.
+\item
+  Sometimes this is referred to as ``incidence-prevalence bias.''
+\item
+  Prevalent cases with better prognosis or underlying health are more likely to show up in your study.
+\end{itemize}
+
+Take the DAG in Fig. 3.4.b to represent a study of the effect of folic acid (A) at conception on the prevalence of birth defects (Y). Only those babies born were included in the study (C).
+
+\hypertarget{selection-bias-in-randomized-control-trials-rct}{%
+\paragraph{Selection bias in randomized control trials (RCT)}\label{selection-bias-in-randomized-control-trials-rct}}
+
+\begin{itemize}
+\tightlist
+\item
+  RCTs are often thought to be the ``gold standard'' of causal inference
+\item
+  While they are less likely to be subject to confounding, they are equally likely to be subject to selection bias due to loss to follow-up.
+\end{itemize}
+
+Take the DAG in Fig. 3.3.b to represent a study of AZT (A) on development on AIDS (Y). Treatment A and illness severity (U) both cause side effects (L) which leads to dropout (C).
+
+\hypertarget{key-points}{%
+\section{Key points}\label{key-points}}
+
+\begin{itemize}
+\tightlist
+\item
+  Selection bias is a type of systematic error related to recruitment or retention of participants.
+\item
+  Recruitment or retention must be related to exposure and outcome to cause bias.
+\item
+  We can visualize selection bias on DAGs.
+\item
+  All types of studies are subject to selection bias but it might look different depending on the study.
+\end{itemize}
+
+\hypertarget{regression}{%
+\chapter{Regression}\label{regression}}
+
+\emph{Material excerpted and adapted from \href{https://www.hopkinsmedicine.org/gynecology_obstetrics/pdfs/medstudent/rtc2014/Epi\%20Study\%20Design\%20and\%20Exploratory\%20Analyses_abb.pdf}{Bender 2009} and \href{https://www.epirhandbook.com/en/}{epiRhandbook}}
+
+One of the most important analysis related methods to deal with confounding is multiple regression analysis.
+
+The most important methods are:
+
+\begin{itemize}
+\tightlist
+\item
+  Linear regression for continuous outcomes
+\item
+  Logistic regression for binary outcomes
+\item
+  Cox regression for time-to-event data, and
+\item
+  Poisson regression for frequencies and rates
+\end{itemize}
+
+Other methods are, for example, stratification, the use of instrumental variables, or the application of propensity scores. In this chapter, an overview of the most important multiple regression models is given with a focus on applications in modern epidemiology.
+
+\hypertarget{linear-regression}{%
+\section{Linear regression}\label{linear-regression}}
+
+The use of simple linear regression is possible if the effect of one continuous explanatory variable X, for example, Body mass index measured in kilograms per square meter on one continuous response variable Y, for example, systolic blood pressure measured in millimeters of Hg is to be investigated. The fundamental model equation is given by
+
+\[
+Y = \beta_0 + \beta_1x + \epsilon
+\]
+
+where \(\beta_0\) is the intercept, \(\beta_1\) is the regression coefficient for \(X\), \(x\) is the observed value for \(X\), and \(\epsilon\) is the random error describing individual deviations from the mean of \(Y\) given \(X=x\), also called the residual term.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{img/regression/univariate_regression} 
+
+}
+
+\caption{An example of a univariate regression analysis}\label{fig:unnamed-chunk-25}
+\end{figure}
+
+The ordinary least squares estimates of the parameters \(\beta_1\) and \(\beta_0\) are given by
+
+\[
+\hat{\beta}_1 = \frac{\sum_{i=1}^{n} (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^{n} (x_i-\bar{x})^2}
+\]
+
+and
+
+\[
+\beta_0 = \bar{y}-\hat{\beta}_1\bar{x}
+\]
+
+where \(\bar(x)\) and \(\bar(y)\) are the arithmetic means of \(x_i\) and \(y_i\), \(i=1,...,n\), respectively.
+
+In summary, the goal of regression models are threefold:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  To determine whether the variables \(Y\) and \(X\) are systematically related (test of \(H_0:\beta_1=0\)).
+\item
+  To estimate the effect size of \(X\) on \(Y\) by means of \(\hat{\beta}_1\) (complemented by a 95\% confidence interval)
+\item
+  To predict the expected value of \(Y\) for given values of \(X\) (with 95\% confidence interval)
+\end{enumerate}
+
+\hypertarget{multiple-linear-regression}{%
+\section{Multiple linear regression}\label{multiple-linear-regression}}
+
+Simple linear regression plays a negligible role in epidemiology for two reasons:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Binary (logistic) and time-to-event (Cox) outcomes are much more common than continuous response variables
+\item
+  The effects of \textbf{confounders} have to be taken into account, so that multiple linear regression should be applied even if we are interested mainly in the effect of one primary explanatory variable. The multiple linear regression model is an extension of the univariate linear regression model where instead of only one explanatory variable \(X\) several explanatory variables \(X_1,...,X_k\) with observed values \(x_1,...x_k\) are considered. The fundamental model equation is given by
+\end{enumerate}
+
+\[
+Y = \beta_0 + \beta_1 x_1 + ... + \beta_k x_k + \epsilon
+\]
+
+As mentioned above, we can test whether th explanatory variable \(X_j (j=1, ..., k)\) has a significant effect on the response \(Y\), we can describe the estimated effect size of \(X_j\) by means of \(\hat{\beta}_j\) for \(j=1,...,k\) (with CIs), and we can predict the expected value of \(Y\) for given values of \(X_1, ... X_k\) (with CIs).
+
+This model can describe the effects of several explanatory variables simultaneously and the regression coefficient \(\beta_j\) represents the effect for \(X_j\) adjusted for all other explanatory variables. In general, it is misleading to assess the associations of the response \(Y\) and several explanatory variables by means of several simple linear regression models.
+
+\ldots.
+
+\hypertarget{literature}{%
+\chapter{Literature}\label{literature}}
+
+Here is a review of existing methods.
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}

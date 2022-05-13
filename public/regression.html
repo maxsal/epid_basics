@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 5 Regression | Epidemiology Basics</title>
+<title>Chapter 6 Regression | Epidemiology Basics</title>
 <meta name="author" content="Max Salvatore">
 <meta name="description" content="Material excerpted and adapted from Bender 2009 and epiRhandbook One of the most important analysis related methods to deal with confounding is multiple regression analysis. The most important...">
 <meta name="generator" content="bookdown 0.26 with bs4_book()">
-<meta property="og:title" content="Chapter 5 Regression | Epidemiology Basics">
+<meta property="og:title" content="Chapter 6 Regression | Epidemiology Basics">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Material excerpted and adapted from Bender 2009 and epiRhandbook One of the most important analysis related methods to deal with confounding is multiple regression analysis. The most important...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 5 Regression | Epidemiology Basics">
+<meta name="twitter:title" content="Chapter 6 Regression | Epidemiology Basics">
 <meta name="twitter:description" content="Material excerpted and adapted from Bender 2009 and epiRhandbook One of the most important analysis related methods to deal with confounding is multiple regression analysis. The most important...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -43,11 +43,12 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
-<li><a class="" href="study-design.html"><span class="header-section-number">2</span> Study design</a></li>
-<li><a class="" href="confounding.html"><span class="header-section-number">3</span> Confounding bias</a></li>
-<li><a class="" href="selection-bias.html"><span class="header-section-number">4</span> Selection bias</a></li>
-<li><a class="active" href="regression.html"><span class="header-section-number">5</span> Regression</a></li>
-<li><a class="" href="literature.html"><span class="header-section-number">6</span> Literature</a></li>
+<li><a class="" href="causality.html"><span class="header-section-number">2</span> Causality</a></li>
+<li><a class="" href="study-design.html"><span class="header-section-number">3</span> Study design</a></li>
+<li><a class="" href="confounding.html"><span class="header-section-number">4</span> Confounding bias</a></li>
+<li><a class="" href="selection-bias.html"><span class="header-section-number">5</span> Selection bias</a></li>
+<li><a class="active" href="regression.html"><span class="header-section-number">6</span> Regression</a></li>
+<li><a class="" href="literature.html"><span class="header-section-number">7</span> Literature</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -56,9 +57,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="regression" class="section level1" number="5">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="regression" class="section level1" number="6">
 <h1>
-<span class="header-section-number">5</span> Regression<a class="anchor" aria-label="anchor" href="#regression"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6</span> Regression<a class="anchor" aria-label="anchor" href="#regression"><i class="fas fa-link"></i></a>
 </h1>
 <p><em>Material excerpted and adapted from <a href="https://www.hopkinsmedicine.org/gynecology_obstetrics/pdfs/medstudent/rtc2014/Epi%20Study%20Design%20and%20Exploratory%20Analyses_abb.pdf">Bender 2009</a> and <a href="https://www.epirhandbook.com/en/">epiRhandbook</a></em></p>
 <p>One of the most important analysis related methods to deal with confounding is multiple regression analysis.</p>
@@ -70,9 +71,9 @@
 <li>Poisson regression for frequencies and rates</li>
 </ul>
 <p>Other methods are, for example, stratification, the use of instrumental variables, or the application of propensity scores. In this chapter, an overview of the most important multiple regression models is given with a focus on applications in modern epidemiology.</p>
-<div id="linear-regression" class="section level2" number="5.1">
+<div id="linear-regression" class="section level2" number="6.1">
 <h2>
-<span class="header-section-number">5.1</span> Linear regression<a class="anchor" aria-label="anchor" href="#linear-regression"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1</span> Linear regression<a class="anchor" aria-label="anchor" href="#linear-regression"><i class="fas fa-link"></i></a>
 </h2>
 <p>The use of simple linear regression is possible if the effect of one continuous explanatory variable X, for example, Body mass index measured in kilograms per square meter on one continuous response variable Y, for example, systolic blood pressure measured in millimeters of Hg is to be investigated. The fundamental model equation is given by</p>
 <p><span class="math display">\[
@@ -80,9 +81,9 @@ Y = \beta_0 + \beta_1x + \epsilon
 \]</span></p>
 <p>where <span class="math inline">\(\beta_0\)</span> is the intercept, <span class="math inline">\(\beta_1\)</span> is the regression coefficient for <span class="math inline">\(X\)</span>, <span class="math inline">\(x\)</span> is the observed value for <span class="math inline">\(X\)</span>, and <span class="math inline">\(\epsilon\)</span> is the random error describing individual deviations from the mean of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X=x\)</span>, also called the residual term.</p>
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:unnamed-chunk-23"></span>
+<span style="display:block;" id="fig:unnamed-chunk-25"></span>
 <img src="img/regression/univariate_regression.png" alt="An example of a univariate regression analysis" width="100%"><p class="caption">
-Figure 5.1: An example of a univariate regression analysis
+Figure 6.1: An example of a univariate regression analysis
 </p>
 </div>
 <p>The ordinary least squares estimates of the parameters <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_0\)</span> are given by</p>
@@ -101,9 +102,9 @@ Figure 5.1: An example of a univariate regression analysis
 <li>To predict the expected value of <span class="math inline">\(Y\)</span> for given values of <span class="math inline">\(X\)</span> (with 95% confidence interval)</li>
 </ol>
 </div>
-<div id="multiple-linear-regression" class="section level2" number="5.2">
+<div id="multiple-linear-regression" class="section level2" number="6.2">
 <h2>
-<span class="header-section-number">5.2</span> Multiple linear regression<a class="anchor" aria-label="anchor" href="#multiple-linear-regression"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2</span> Multiple linear regression<a class="anchor" aria-label="anchor" href="#multiple-linear-regression"><i class="fas fa-link"></i></a>
 </h2>
 <p>Simple linear regression plays a negligible role in epidemiology for two reasons:</p>
 <ol style="list-style-type: decimal">
@@ -120,14 +121,14 @@ Y = \beta_0 + \beta_1 x_1 + ... + \beta_k x_k + \epsilon
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="selection-bias.html"><span class="header-section-number">4</span> Selection bias</a></div>
-<div class="next"><a href="literature.html"><span class="header-section-number">6</span> Literature</a></div>
+<div class="prev"><a href="selection-bias.html"><span class="header-section-number">5</span> Selection bias</a></div>
+<div class="next"><a href="literature.html"><span class="header-section-number">7</span> Literature</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#regression"><span class="header-section-number">5</span> Regression</a></li>
-<li><a class="nav-link" href="#linear-regression"><span class="header-section-number">5.1</span> Linear regression</a></li>
-<li><a class="nav-link" href="#multiple-linear-regression"><span class="header-section-number">5.2</span> Multiple linear regression</a></li>
+<li><a class="nav-link" href="#regression"><span class="header-section-number">6</span> Regression</a></li>
+<li><a class="nav-link" href="#linear-regression"><span class="header-section-number">6.1</span> Linear regression</a></li>
+<li><a class="nav-link" href="#multiple-linear-regression"><span class="header-section-number">6.2</span> Multiple linear regression</a></li>
 </ul>
 
       <div class="book-extra">
@@ -144,7 +145,7 @@ Y = \beta_0 + \beta_1 x_1 + ... + \beta_k x_k + \epsilon
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Epidemiology Basics</strong>" was written by Max Salvatore. It was last built on 2022-05-12.</p>
+    <p>"<strong>Epidemiology Basics</strong>" was written by Max Salvatore. It was last built on 2022-05-13.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
