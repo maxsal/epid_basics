@@ -94,30 +94,41 @@ Figure 6.1: An example of a univariate regression analysis
 <p><span class="math display">\[
 \beta_0 = \bar{y}-\hat{\beta}_1\bar{x}
 \]</span></p>
-<p>where <span class="math inline">\(\bar(x)\)</span> and <span class="math inline">\(\bar(y)\)</span> are the arithmetic means of <span class="math inline">\(x_i\)</span> and <span class="math inline">\(y_i\)</span>, <span class="math inline">\(i=1,...,n\)</span>, respectively.</p>
+<p>where <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span> are the arithmetic means of <span class="math inline">\(x_i\)</span> and <span class="math inline">\(y_i\)</span>, <span class="math inline">\(i=1,...,n\)</span>, respectively.</p>
 <p>In summary, the goal of regression models are threefold:</p>
 <ol style="list-style-type: decimal">
 <li>To determine whether the variables <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span> are systematically related (test of <span class="math inline">\(H_0:\beta_1=0\)</span>).</li>
 <li>To estimate the effect size of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> by means of <span class="math inline">\(\hat{\beta}_1\)</span> (complemented by a 95% confidence interval)</li>
 <li>To predict the expected value of <span class="math inline">\(Y\)</span> for given values of <span class="math inline">\(X\)</span> (with 95% confidence interval)</li>
 </ol>
-</div>
-<div id="multiple-linear-regression" class="section level2" number="6.2">
-<h2>
-<span class="header-section-number">6.2</span> Multiple linear regression<a class="anchor" aria-label="anchor" href="#multiple-linear-regression"><i class="fas fa-link"></i></a>
-</h2>
+<div id="multiple-linear-regression" class="section level3" number="6.1.1">
+<h3>
+<span class="header-section-number">6.1.1</span> Multiple linear regression<a class="anchor" aria-label="anchor" href="#multiple-linear-regression"><i class="fas fa-link"></i></a>
+</h3>
 <p>Simple linear regression plays a negligible role in epidemiology for two reasons:</p>
 <ol style="list-style-type: decimal">
 <li>Binary (logistic) and time-to-event (Cox) outcomes are much more common than continuous response variables</li>
-<li>The effects of <strong>confounders</strong> have to be taken into account, so that multiple linear regression should be applied even if we are interested mainly in the effect of one primary explanatory variable. The multiple linear regression model is an extension of the univariate linear regression model where instead of only one explanatory variable <span class="math inline">\(X\)</span> several explanatory variables <span class="math inline">\(X_1,...,X_k\)</span> with observed values <span class="math inline">\(x_1,...x_k\)</span> are considered. The fundamental model equation is given by</li>
+<li>The effects of <strong>confounders</strong> have to be taken into account, so that multiple linear regression should be applied even if we are interested mainly in the effect of one primary explanatory variable. The multiple linear regression model is an extension of the univariate linear regression model where instead of only one explanatory variable <span class="math inline">\(X\)</span> several explanatory variables <span class="math inline">\(X_1,...,X_k\)</span> with observed values <span class="math inline">\(x_1,...,x_k\)</span> are considered. The fundamental model equation is given by</li>
 </ol>
 <p><span class="math display">\[
 Y = \beta_0 + \beta_1 x_1 + ... + \beta_k x_k + \epsilon
 \]</span></p>
-<p>As mentioned above, we can test whether th explanatory variable <span class="math inline">\(X_j (j=1, ..., k)\)</span> has a significant effect on the response <span class="math inline">\(Y\)</span>, we can describe the estimated effect size of <span class="math inline">\(X_j\)</span> by means of <span class="math inline">\(\hat{\beta}_j\)</span> for <span class="math inline">\(j=1,...,k\)</span> (with CIs), and we can predict the expected value of <span class="math inline">\(Y\)</span> for given values of <span class="math inline">\(X_1, ... X_k\)</span> (with CIs).</p>
+<p>As mentioned above, we can test whether th explanatory variable <span class="math inline">\(X_j (j=1, ..., k)\)</span> has a significant effect on the response <span class="math inline">\(Y\)</span>, we can describe the estimated effect size of <span class="math inline">\(X_j\)</span> by means of <span class="math inline">\(\hat{\beta}_j\)</span> for <span class="math inline">\(j=1,...,k\)</span> (with CIs), and we can predict the expected value of <span class="math inline">\(Y\)</span> for given values of <span class="math inline">\(X_1, ..., X_k\)</span> (with CIs).</p>
 <p>This model can describe the effects of several explanatory variables simultaneously and the regression coefficient <span class="math inline">\(\beta_j\)</span> represents the effect for <span class="math inline">\(X_j\)</span> adjusted for all other explanatory variables. In general, it is misleading to assess the associations of the response <span class="math inline">\(Y\)</span> and several explanatory variables by means of several simple linear regression models.</p>
-<p>….</p>
-
+</div>
+<div id="assumptions" class="section level3" number="6.1.2">
+<h3>
+<span class="header-section-number">6.1.2</span> Assumptions<a class="anchor" aria-label="anchor" href="#assumptions"><i class="fas fa-link"></i></a>
+</h3>
+<p>There are four assumptions for conducting linear regression:</p>
+<ol style="list-style-type: decimal">
+<li>Linear relationship</li>
+<li>Independence</li>
+<li>Homoscedasticity</li>
+<li>Normality
+….</li>
+</ol>
+</div>
 </div>
 </div>
   <div class="chapter-nav">
@@ -127,8 +138,12 @@ Y = \beta_0 + \beta_1 x_1 + ... + \beta_k x_k + \epsilon
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#regression"><span class="header-section-number">6</span> Regression</a></li>
-<li><a class="nav-link" href="#linear-regression"><span class="header-section-number">6.1</span> Linear regression</a></li>
-<li><a class="nav-link" href="#multiple-linear-regression"><span class="header-section-number">6.2</span> Multiple linear regression</a></li>
+<li>
+<a class="nav-link" href="#linear-regression"><span class="header-section-number">6.1</span> Linear regression</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#multiple-linear-regression"><span class="header-section-number">6.1.1</span> Multiple linear regression</a></li>
+<li><a class="nav-link" href="#assumptions"><span class="header-section-number">6.1.2</span> Assumptions</a></li>
+</ul>
+</li>
 </ul>
 
       <div class="book-extra">
@@ -145,7 +160,7 @@ Y = \beta_0 + \beta_1 x_1 + ... + \beta_k x_k + \epsilon
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Epidemiology Basics</strong>" was written by Max Salvatore. It was last built on 2022-05-13.</p>
+    <p>"<strong>Epidemiology Basics</strong>" was written by Max Salvatore. It was last built on 2022-05-16.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

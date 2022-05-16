@@ -84,4 +84,5 @@ key-points
 regression
 linear-regression
 multiple-linear-regression
+assumptions
 literature
